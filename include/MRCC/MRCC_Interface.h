@@ -1,0 +1,85 @@
+/*
+ * MRCC_Interface.h
+ *
+ *  Created on: Dec 1, 2020
+ *      Author: Abeer
+ */
+
+#ifndef MRCC_Interface_H_
+#define MRCC_Interface_H_
+
+typedef enum{
+	MRCC_HSE_CRYSTAL,
+	MRCC_HSE_RC,
+	MRCC_HSI,
+	MRCC_PLL
+}CLKTYPE;
+
+#define MRCC_AHB    0
+#define MRCC_APB1   1
+#define MRCC_APB2   2
+
+typedef enum{
+	MRCC_DMA1_EN,
+	MRCC_DMA2_EN,
+	MRCC_SRAMC_EN,
+	MRCC_FLITF_EN=4,
+	MRCC_CRC_EN=6,
+	MRCC_FSMC_EN=8,
+	MRCC_SDIO_EN=10
+}AHB_PREI;
+
+typedef enum{
+	MRCC_TIM2_EN,
+	MRCC_TIM3_EN,
+	MRCC_TIM4_EN,
+	MRCC_TIM5_EN,
+	MRCC_TIM6_EN,
+	MRCC_TIM7_EN,
+	MRCC_TIM12_EN,
+	MRCC_TIM13_EN,
+	MRCC_TIM14_EN,
+	MRCC_WWDG_EN=11,
+	MRCC_SPI2_EN=14,
+	MRCC_SPI3_EN,
+	MRCC_USART2_EN=17,
+	MRCC_USART3_EN,
+	MRCC_UART4_EN,
+	MRCC_UART5_EN,
+	MRCC_I2C1_EN,
+	MRCC_I2C2_EN,
+	MRCC_CAN_EN=25,
+	MRCC_BKP_EN=27,
+	MRCC_PWR_EN,
+	MRCC_DAC_EN
+}APB1_PREI;
+
+typedef enum{
+	MRCC_AFIO_EN,
+	MRCC_GPIOA_EN=2,
+	MRCC_GPIOB_EN,
+	MRCC_GPIOC_EN,
+	MRCC_ADC1_EN=9,
+	MRCC_ADC2_EN,
+	MRCC_TIM1_EN,
+	MRCC_SPI1_EN,
+	MRCC_TIM8_EN,
+	MRCC_UART1_EN,
+	MRCC_ADC3_EN,
+	MRCC_TIM9_EN=19,
+	MRCC_TIM10_EN,
+	MRCC_TIM11_EN
+}APB2_PREI;
+
+void MRCC_VidInitSysClock(CLKTYPE Copy_CLKTYPEClock);
+
+void MRCC_EnablePeriClock(u8 Copy_u8BusId , u8 Copy_u8PerId);
+
+void MRCC_DisablePeriClock(u8 Copy_u8BusId , u8 Copy_u8PerId);
+
+
+
+#endif /* MRCC_CONFIG_H_ */
+
+
+
